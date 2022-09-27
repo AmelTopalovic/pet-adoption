@@ -1,6 +1,5 @@
 const debug = require('debug')('app:server');
 const debugError = require('debug')('app:error');
-const e = require('express');
 const express = require('express');
 const { nanoid } = require('nanoid');
 

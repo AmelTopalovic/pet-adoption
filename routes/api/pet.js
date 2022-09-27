@@ -1,6 +1,7 @@
 const debug = require('debug')('app:routes:api:pet');
 const debugError = require('debug')('app:error');
 const express = require('express');
+const { nanoid } = require('nanoid');
 
 
 
@@ -112,11 +113,13 @@ router.delete('/:petId', (req, res, next) => {
     if (indexPet < 0) {
         res.status(404).json({error:'Pet not found'});
     }else{
-        petsArray.splice(index, 1);
+        petsArray.splice(indexPet, 1);
         res.json({message:'Pet deleted'});
+        
     }
 
 });
+
 
 //export the routes
 module.exports = router;
